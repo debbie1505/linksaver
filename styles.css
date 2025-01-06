@@ -1,0 +1,131 @@
+/*CSS reset rule - code from Josh Comeau */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: white;
+}
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  /*allows the body element to grow with it's content, the html element will grow with the body element*/
+  /*width is 100% viewport*/
+  /*Adding 100vw gives us a scrol bar*/
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "ADLaM Display", serif;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  background-color: #ffffff;
+  padding: 2rem 10rem;
+}
+
+header {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.main-content {
+  width: 100%;
+}
+
+.tagline {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  font-size: 2rem;
+  font-weight: 30;
+}
+
+main {
+  width: 675px;
+  height: 50vh;
+  background-color: #6943ff;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#add-button {
+  padding: 20px 120px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 50px;
+  color: #6943ff;
+  font-size: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#saved-links-button {
+  padding: 7px;
+  color: #6943ff;
+}
