@@ -20,23 +20,29 @@
           alt="logo"
           style="width: 5rem; float: left; margin-left: 40px"
         />
-        <h2 style="margin-left: 15rem; font-size: 2.7rem; font-weight: 50">
+        <h2 style="margin-left: 15rem; font-size: 2.7rem; font-weight: lighter">
           LinkSaver
         </h2>
       </header>
 
       <p class="tagline">Your links, saved for later</p>
-      <button id="add-button">+</button>
-      <button id="saved-links-button">See saved links</button>
+      <button id="add-new-link" class="links-btn">Add New Link</button>
+      <button id="save-current-tab" class="links-btn">See Current Tab</button>
+      <button id="see-saved-links" >see saved links</button>
 
       <script type="module" src="index.js"></script>
     </main>
-
-    <!--<section id="form">
-        <form>
-            <
-        </form>
+    <!--create the form and then commit-->
+    <section id="form">
+      <form>
+        <label for="url-title" aria-label="url-title">URL Title</label>
+        <input id="url-title" name="url-title" type="text" aria-label="url-title-input-box"/>
+        <label for="url" aria-label="url">URL</label>
+        <input id="url" name="url" type="url" aria-label="url-input-box"/>
+        <label for="category" aria-label="url-category">Category</label>
+        <input id="category" name="category" type="text" aria-label="url-category-input-box"/>
+        <div class="select-element-container"></div>
+      </form>
     </section>
--->
   </body>
 </html>

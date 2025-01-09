@@ -8,8 +8,9 @@ import {
 } from "https://www.gstatic.com/firebasejs/11.1.0/database-app.js";
 
 //elements
-const addButton = document.getElementById("add-button");
-const seeSavedLinks = document.getElementById("saved-links-button");
+const addNewLink = document.getElementById("add-new-link");
+const saveCurrentTab = document.getElementById("saved-current-tab");
+const seeSavedLinks = document.getElementById("see-saved-link")
 const firebaseConfig = {
   databaseURL: "https://leads-tracker-app-d1124-default-rtdb.firebaseio.com/",
 };
@@ -27,8 +28,18 @@ onValue(referenceInDB, function (snapshot) {
   console.log(snapshot);
 });
 
-//using an anonymous function
-addButton.addEventListener("click", function(){
-    
+
+addNewLink.addEventListener("click", function(){
+
+
+})
+
+saveCurrentTab.addEventListener("click", function(){
+   
+
+})
+
+seeSavedLinks.addEventListener("click", function(){
+
 
 })
