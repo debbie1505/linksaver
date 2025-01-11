@@ -38,39 +38,43 @@
     </main>
     <!--create the form and then commit-->
     <section id="form-container" class="form-container">
-      <form action=""method="POST" onsubmit="handleSubmit()">
+      <form action="" method="POST" onsubmit="handleSubmit()">
         <header><h2>Customize Link</h2></header>
         <!--The p element is there for structuring the code-->
-    <p>
-        <label HTMLfor="url-title" aria-label="url-title">URL Title</label>
-        <input
-          id="url-title"
-          name="url-title"
-          type="text"
-          aria-label="url-title-input-box"
-          placeholder="Linkendin Page"
-        />
-    </p>
-    <p>
-        <label HTMLfor="url" aria-label="url">URL</label>
-        <input id="url" name="url" type="url" aria-label="url-input-box" placeholder="exampleurl.com"/>
-    </p>
-<p>
-        <label HTMLfor="category" aria-label="url-category">Category</label>
-        <input
-          id="category"
-          name="category"
-          type="text"
-          aria-label="url-category-input-box"
-          placeholder="social media pages"
-        />
+        <p>
+          <label HTMLfor="url-title" aria-label="url-title">URL Title</label>
+          <input
+            id="url-title"
+            name="url-title"
+            type="text"
+            aria-label="url-title-input-box"
+            placeholder="Linkendin Page"
+          />
+        </p>
+        <p>
+          <label HTMLfor="url" aria-label="url">URL</label>
+          <input
+            id="url"
+            name="url"
+            type="url"
+            aria-label="url-input-box"
+            placeholder="exampleurl.com"
+          />
+        </p>
+        <p>
+          <label
+            HTMLfor="categories"
+            aria-label="url-category"
+            class="categories-element"
+            >Category</label
+          >
+          <select id="categories" name="categories" class="categories"></select>
         </p>
         <div class="select-element-container"></div>
         <div class="btn-container" class="btn-container">
-            <!--submit type send the form's data to the web page defined by the action attrivute-->
-<button type="submit">Save</button>
-<button type="submit">Save and Add Another Link</button>
-
+          <!--submit type send the form's data to the web page defined by the action attrivute-->
+          <button type="submit">Save</button>
+          <button type="submit">Save and Add Another Link</button>
         </div>
       </form>
     </section>
