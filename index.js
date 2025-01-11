@@ -15,6 +15,23 @@ const firebaseConfig = {
   databaseURL: "https://leads-tracker-app-d1124-default-rtdb.firebaseio.com/",
 };
 
+function handleSubmit(){
+    //prevent the default behavior where the form refresh
+    event.preventDefault()
+    //getting the form element from the current target of the event
+    const formEl = event.currentTarget
+    //creating a set of form data
+    //gives us access to the form input
+    const formData = new FormData(formEl)
+    //getiing information from the data
+    const email = formData.get("")
+    //allows us to reset the form 
+    formEl.removeEventListener()
+    //gather info from the forms
+    //submit it to a backend
+    
+}
+
 //connect the app with the database 
 const app = initializeApp(firebaseConfig);
 
@@ -30,7 +47,7 @@ onValue(referenceInDB, function (snapshot) {
 
 
 addNewLink.addEventListener("click", function(){
-
+    
 
 })
 
