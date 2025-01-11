@@ -172,4 +172,9 @@ form > header > h2 {
     margin: auto;
 }
 
+p > .categories {
+    padding: 2px 5px;
+
+}
+
 

@@ -65,11 +65,27 @@
           <label
             HTMLfor="categories"
             aria-label="url-category"
-            class="categories-element"
+            class="categories-label"
             >Category</label
           >
-          <select id="categories" name="categories" class="categories"></select>
+          <select
+            id="categories"
+            name="categories"
+            class="categories"
+          >
+            <option value="">--Select a category or create a new one--</option>
+            <option value="add-new">
+              + Add New Category
+            </option>
+          </select>
         </p>
+        <input
+          type="text"
+          id="new-category"
+          name="new-category"
+          placeholder="Enter a new category"
+          style="display: none"
+        />
         <div class="select-element-container"></div>
         <div class="btn-container" class="btn-container">
           <!--submit type send the form's data to the web page defined by the action attrivute-->
@@ -78,5 +94,6 @@
         </div>
       </form>
     </section>
+    <script type="module"src="index.js"></script>
   </body>
 </html>
