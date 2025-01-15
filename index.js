@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
 newCategoryInput.addEventListener("change", function () {
   let firstLetterCapitalInput = newCategoryInput.value.charAt(0).toUpperCase() + newCategoryInput.value.slice(1)
   console.log(firstLetterCapitalInput)
-  selectElement.add(new Option(firstLetterCapitalInput));
+  const position = selectElement.options.length - 1;
+  selectElement.add(new Option(firstLetterCapitalInput), selectElement.options[position]);
   newCategoryInput.value = ""
 })
 
