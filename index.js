@@ -11,29 +11,31 @@ import {
 const addNewLink = document.getElementById("add-new-link");
 const saveCurrentTab = document.getElementById("save-current-tab");
 const seeSavedLinks = document.getElementById("see-saved-links");
+const selectElement = document.getElementById("categories");
+const newCategoryInput = document.getElementById("new-category");
 /*
 const firebaseConfig = {
   databaseURL: "https://leads-tracker-app-d1124-default-rtdb.firebaseio.com/",
 };
 */
 
-
 console.log(document.getElementById("categories")); // Should print the select element
 console.log(document.getElementById("new-category")); // Should print the input element
 
 document.addEventListener("DOMContentLoaded", function () {
-  const selectElement = document.getElementById("categories");
   selectElement.addEventListener("change", function () {
-    const newCategoryInput = document.getElementById("new-category");
-
     //show or hide the input based on selected value
     if (this.value === "add-new") {
-      newCategoryInput.style.display = "block";
+      newCategoryInput.style.display = "inline-block";
     } else {
       newCategoryInput.style.display = "none";
     }
   });
 });
+
+function appendToSelectElement() {
+  selectElement.add(new Option(newCategoryInput.value));
+}
 
 function handleSubmit(event) {
   //prevent the default behavior where the form refresh

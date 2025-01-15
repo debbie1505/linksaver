@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Inter:opsz@14..32&family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
       rel="stylesheet"
     />
+    
   </head>
   <body>
     <main>
@@ -20,9 +21,9 @@
           alt="logo"
           style="width: 5rem; float: left; margin-left: 40px"
         />
-        <h2 style="margin-left: 15rem; font-size: 2.7rem; font-weight: lighter">
+        <h1 style="margin-left: 15rem; font-size: 2.7rem; font-weight: lighter">
           LinkSaver
-        </h2>
+        </h1>
       </header>
 
       <p class="tagline">Your links, saved for later</p>
@@ -36,12 +37,13 @@
 
       <script type="module" src="index.js"></script>
     </main>
+    <!--Form-->
     <!--create the form and then commit-->
     <section id="form-container" class="form-container">
-      <form action="" method="POST" onsubmit="handleSubmit()">
+      <form action="" method="POST">
         <header><h2>Customize Link</h2></header>
         <!--The p element is there for structuring the code-->
-        <p>
+  
           <label HTMLfor="url-title" aria-label="url-title">URL Title</label>
           <input
             id="url-title"
@@ -50,8 +52,8 @@
             aria-label="url-title-input-box"
             placeholder="Linkendin Page"
           />
-        </p>
-        <p>
+        
+      
           <label HTMLfor="url" aria-label="url">URL</label>
           <input
             id="url"
@@ -60,8 +62,8 @@
             aria-label="url-input-box"
             placeholder="exampleurl.com"
           />
-        </p>
-        <p>
+        
+      
           <label
             HTMLfor="categories"
             aria-label="url-category"
@@ -78,7 +80,7 @@
               + Add New Category
             </option>
           </select>
-        </p>
+        
         <input
           type="text"
           id="new-category"

@@ -30,7 +30,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "ADLaM Display", serif;
+  font-family: "Inter", serif;
 }
 
 /* 5. Improve media defaults */
@@ -115,13 +115,18 @@ main {
 }
 
 #see-saved-links {
-  padding: 7px;
+  padding: 7px 12px;
   color: #6943ff;
   background-color: white;
   border: none;
-  margin-top: 10px;
+  margin-top: 50px;
+  border-radius: 5px;
 }
 
+#see-saved-links:hover{
+ text-decoration: underline;
+ cursor: pointer;
+}
 .links-btn {
   padding: 10px;
   min-width: 300px;
@@ -133,7 +138,7 @@ main {
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  color: rgb(128, 128, 128);
+  color: 555555;
   transition: all 0.3s ease;
 }
 .links-btn:hover {
@@ -148,21 +153,21 @@ main {
 }
 
 form{
-    display: inline-block;
     padding: 1em;
+    display: flex;
+    flex-direction: column;
 }
 
 label {
-    display: inline-block;
     min-width: 90px;
-    text-align: right;
 }
 
 form > header {
     background:#6943ff;
-    width: 20rem;
+    width: 100%;
     height: 4rem;
     display: flex;
+    margin-bottom: 20px;
 }
 form > header > h2 {
     color: white;
@@ -172,9 +177,43 @@ form > header > h2 {
     margin: auto;
 }
 
-p > .categories {
-    padding: 2px 5px;
+label { 
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+input {
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  
+}
 
+.btn-container{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-container > button {
+  background-color: #6943ff;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.btn-container > button:hover{
+    color: #6943ff;
+    background-color: white;
+    border: 1px solid #6943ff;
+}
+
+button:first-child{
+  margin-right: 20px;
+}
+
+form > input:hover {
+   border: 2px solid #6943ff;
 }
 
 
+ 
