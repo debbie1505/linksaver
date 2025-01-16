@@ -22,30 +22,35 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 newCategoryInput.addEventListener("change", function () {
-  //trim extra spaces from input
-  const newCategory = newCategoryInput.value.trim()
+  // Trim extra spaces from input
+  const newCategory = newCategoryInput.value.trim();
 
-  
-  //check if the category already exists in the select options
-  const optionExists = Array.from(selectElement.options).some((option) => option.value.toLowerCase() === newCategory.toLowerCase())
-  
-  if(!optionExists){
-    //capitalize the first letter of the input
-    let firstLetterCapitalInput =
-    newCategory.value.charAt(0).toUpperCase() +
-    newCategory.value.slice(1);
-  console.log(firstLetterCapitalInput);
-  
-  //Add the new category as an option before the last position
-  const position = selectElement.options.length - 1;
-  selectElement.add(
-    new Option(firstLetterCapitalInput),
-    selectElement.options[position]
+  // Check if the category already exists in the select options
+  const optionExists = Array.from(selectElement.options).some(
+    (option) => option.value.toLowerCase() === newCategory.toLowerCase()
   );
+
+  if (!optionExists) {
+    // Capitalize the first letter of the input
+    let firstLetterCapitalInput =
+      newCategory.charAt(0).toUpperCase() + newCategory.slice(1);
+
+    console.log(firstLetterCapitalInput);
+
+    // Add the new category as an option before the last position
+    const position = selectElement.options.length - 1;
+    selectElement.add(
+      new Option(firstLetterCapitalInput, newCategory),
+      selectElement.options[position]
+    );
+  } else {
+    console.log("Category already exists!");
   }
-  //clear the input field
+
+  // Clear the input field
   newCategoryInput.value = "";
 });
+
 
 function handleSubmit(event) {
   //prevent the default behavior where the form refresh
