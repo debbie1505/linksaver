@@ -11,7 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Inter:opsz@14..32&family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
       rel="stylesheet"
     />
-    
   </head>
   <body>
     <main>
@@ -27,7 +26,7 @@
       </header>
 
       <p class="tagline">Your links, saved for later</p>
-      <button id="add-new-link" class="links-btn">
+      <button id="add-new-link" class="links-btn modal-tooltip-button">
         <img /> <span> 🔗 Save Link</span>
       </button>
       <button id="save-current-tab" class="links-btn">
@@ -39,48 +38,41 @@
     </main>
     <!--Form-->
     <!--create the form and then commit-->
-    <section id="form-container" class="form-container">
-      <form action="" method="POST">
+    <dialog id="form-container" class="form-container">
+      <button class="close" id="closeModal">&times;</button>
+      <form action="" method="POST" id="form">
         <header><h2>Customize Link</h2></header>
         <!--The p element is there for structuring the code-->
-  
-          <label HTMLfor="url-title" aria-label="url-title">URL Title</label>
-          <input
-            id="url-title"
-            name="url-title"
-            type="text"
-            aria-label="url-title-input-box"
-            placeholder="Linkendin Page"
-          />
-        
-      
-          <label HTMLfor="url" aria-label="url">URL</label>
-          <input
-            id="url"
-            name="url"
-            type="url"
-            aria-label="url-input-box"
-            placeholder="exampleurl.com"
-          />
-        
-      
-          <label
-            HTMLfor="categories"
-            aria-label="url-category"
-            class="categories-label"
-            >Category</label
-          >
-          <select
-            id="categories"
-            name="categories"
-            class="categories"
-          >
-            <option value="">--Select a category or create a new one--</option>
-            <option value="add-new">
-              + Add New Category
-            </option>
-          </select>
-        
+
+        <label HTMLfor="url-title" aria-label="url-title">URL Title</label>
+        <input
+          id="url-title"
+          name="url-title"
+          type="text"
+          aria-label="url-title-input-box"
+          placeholder="Linkendin Page"
+        />
+
+        <label HTMLfor="url" aria-label="url">URL</label>
+        <input
+          id="url"
+          name="url"
+          type="url"
+          aria-label="url-input-box"
+          placeholder="exampleurl.com" required
+        />
+
+        <label
+          HTMLfor="categories"
+          aria-label="url-category"
+          class="categories-label"
+          >Category</label
+        >
+        <select id="categories" name="categories" class="categories">
+          <option value="">--Select a category or create a new one--</option>
+          <option value="add-new">+ Add New Category</option>
+        </select>
+
         <input
           type="text"
           id="new-category"
@@ -91,11 +83,11 @@
         <div class="select-element-container"></div>
         <div class="btn-container" class="btn-container">
           <!--submit type send the form's data to the web page defined by the action attrivute-->
-          <button type="submit">Save</button>
+          <button type="submit" formmethod="dialog">Save</button>
           <button type="submit">Save and Add Another Link</button>
         </div>
       </form>
-    </section>
-    <script type="module"src="index.js"></script>
+    </dialog>
+    <script type="module" src="index.js"></script>
   </body>
 </html>
