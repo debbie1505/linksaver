@@ -69,10 +69,13 @@ function handleSubmit(event) {
 }
 
 //main page eventListeners and function definitions
+
+//when we click the save link button the dialog elemnent is shown as a modal
 addNewLink.addEventListener("click", function () {
   dialog.showModal()
 });
 
+// when we click the x button, the modal is closed
 document.getElementById("closeModal").addEventListener("click", function(){
   dialog.close();
 })
