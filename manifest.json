@@ -1,0 +1,34 @@
+{
+  "name": "Link Saver",
+  "description": "A Chrome Extension that allows you to store your links locally in a save place for future references.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "js": ["index.js"],
+      "matches": [
+        "https://developer.chrome.com/docs/extensions/*",
+        "https://developer.chrome.com/docs/webstore/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "Designer.png",
+    "default_title": "Save your links"
+  },
+
+  "icons": {
+    "16": "Designer.png",
+    "32": "Designer.png",
+    "48": "Designer.png",
+    "128": "Designer.png"
+  },
+
+  "permissions": ["activeTab"],
+
+  "options_ui": {
+    "page": "index.html",
+    "open_in_tab": false
+  }
+}
