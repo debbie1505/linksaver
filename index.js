@@ -67,7 +67,19 @@ document.addEventListener("DOMContentLoaded", function () {
     dialog.close();
   });
 
-  saveCurrentTab.addEventListener("click", function () {});
+  saveCurrentTab.addEventListener("click", async function() {
+    try {
+      const tabs = await browser.tabs.query({ active: true, currentWindow: true});
+      if (tabs.length > 0){
+        const currentTab = tabs[0];
+        console.log('Current tab url: ', currentTab.url);
+      } else {
+        console.error("No active tab found.")
+      }
+    } catch(error) {
+      console.error("Error fetching current tab URL:", error)
+    }
+  });
 
   seeSavedLinks.addEventListener("click", function () {});
 });

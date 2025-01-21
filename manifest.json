@@ -26,6 +26,7 @@
   },
 
   "permissions": ["activeTab"],
+  "host_permissions": ["<all_urls"],
 
   "options_ui": {
     "page": "index.html",
