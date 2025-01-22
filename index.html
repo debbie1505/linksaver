@@ -20,9 +20,7 @@
           alt="logo"
           style="width: 5rem; float: left; margin-left: 40px"
         />
-        <h1 style="margin-left: 10rem; font-size: 2rem;">
-          LinkSaver
-        </h1>
+        <h1 style="margin-left: 10rem; font-size: 2rem">LinkSaver</h1>
       </header>
 
       <p class="tagline">Your links, saved for later</p>
@@ -59,7 +57,8 @@
           name="url"
           type="url"
           aria-label="url-input-box"
-          placeholder="exampleurl.com" required
+          placeholder="exampleurl.com"
+          required
         />
 
         <label
@@ -83,8 +82,8 @@
         <div class="select-element-container"></div>
         <div class="btn-container" class="btn-container">
           <!--submit type send the form's data to the web page defined by the action attrivute-->
-          <button type="submit" formmethod="dialog">Save</button>
-          <button type="submit">Save and Add Another Link</button>
+          <button type="submit" formmethod="dialog" id="save-link">Save Link</button>
+          <button type="submit" id="save-and-add-new">Save and Add Another Link</button>
         </div>
       </form>
     </dialog>

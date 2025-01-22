@@ -7,8 +7,24 @@ const selectElement = document.getElementById("categories");
 const newCategoryInput = document.getElementById("new-category");
 const form = document.getElementById("form");
 
-console.log(document.getElementById("categories")); // Should print the select element
-console.log(document.getElementById("new-category")); // Should print the input element
+//Initialize categories and links
+
+async function initializeData() {
+  const result = await chrome.storage.local.get(["categories", "links"]);
+  const categories = result.categories || [];
+  const links = result.links || [];
+}
+
+function updateCategoriesDropdown(newCategories) {
+  newCategories.forEach((category) => {
+    // Add the category to the dropdown before the last option
+    const position = selectElement.options.length - 1;
+    selectElement.add(
+      new Option(category, category),
+      selectElement.options[position]
+    );
+  });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   selectElement.addEventListener("change", function () {
@@ -21,36 +37,42 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   //for the category feature
-  newCategoryInput.addEventListener("change", function () {
-    // Trim extra spaces from input
-    const newCategory = newCategoryInput.value.trim();
+  newCategoryInput.addEventListener("change", async function () {
+    try {
+      // Trim extra spaces from input
+      const newCategory = newCategoryInput.value.trim();
 
-    // Check if the category already exists in the select options
-    const optionExists = Array.from(selectElement.options).some(
-      (option) => option.value.toLowerCase() === newCategory.toLowerCase()
-    );
-
-    if (!optionExists) {
       // Capitalize the first letter of the input
-      let firstLetterCapitalInput =
+      const formattedCategory =
         newCategory.charAt(0).toUpperCase() + newCategory.slice(1);
 
-      console.log(firstLetterCapitalInput);
+      // Retrieve categories from storage
+      const result = await chrome.storage.local.get("categories");
+      const categories = result.categories || [];
 
-      // Add the new category as an option before the last position
-      const position = selectElement.options.length - 1;
-      selectElement.add(
-        new Option(firstLetterCapitalInput, newCategory),
-        selectElement.options[position]
-      );
-    } else {
-      console.log("Category already exists!");
+      // Check if the category already exists in the stored categories
+      if (
+        !categories.some(
+          (category) =>
+            category.toLowerCase() === formattedCategory.toLowerCase()
+        )
+      ) {
+        // Add the new category to storage
+        categories.push(formattedCategory);
+        await chrome.storage.local.set({ categories });
+
+        // Update the dropdown with the new category
+        updateCategoriesDropdown([formattedCategory]); // Pass only the new category
+      } else {
+        console.log("Category already exists!");
+      }
+
+      // Clear the input field
+      newCategoryInput.value = "";
+    } catch (error) {
+      console.error("Error updating categories:", error);
     }
-
-    // Clear the input field
-    newCategoryInput.value = "";
   });
-
 
   //main page eventListeners and function definitions
 
@@ -60,26 +82,37 @@ document.addEventListener("DOMContentLoaded", function () {
       dialog.showModal();
     });
   }
-  
 
   // when we click the x button, the modal is closed
   document.getElementById("closeModal").addEventListener("click", function () {
     dialog.close();
   });
 
-  saveCurrentTab.addEventListener("click", async function() {
+  //the current tab is saved when we click the current tab button
+  saveCurrentTab.addEventListener("click", async function () {
     try {
-      const tabs = await browser.tabs.query({ active: true, currentWindow: true});
-      if (tabs.length > 0){
+      const tabs = await browser.tabs.query({
+        active: true,
+        currentWindow: true,
+      });
+      if (tabs.length > 0) {
         const currentTab = tabs[0];
-        console.log('Current tab url: ', currentTab.url);
+        console.log("Current tab url: ", currentTab.url);
       } else {
-        console.error("No active tab found.")
+        console.error("No active tab found.");
       }
-    } catch(error) {
-      console.error("Error fetching current tab URL:", error)
+    } catch (error) {
+      console.error("Error fetching current tab URL:", error);
     }
   });
 
   seeSavedLinks.addEventListener("click", function () {});
 });
+
+//Dialog
+
+//Elements
+const saveLink = document.getElementById("save-link");
+const saveLinkAndMore = document.getElementById("save-and-add-one");
+
+//when save link button is click, the dialog is closed and the input is saved locally
