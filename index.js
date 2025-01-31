@@ -37,19 +37,24 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   //for the category feature
-  newCategoryInput.addEventListener("change", async function () {
+  newCategoryInput.addEventListener("change", function () {
     try {
       // Trim extra spaces from input
       const newCategory = newCategoryInput.value.trim();
-
+  
+      if (newCategory === "") {
+        alert("Category name cannot be empty.");
+        return;
+      }
+  
       // Capitalize the first letter of the input
       const formattedCategory =
         newCategory.charAt(0).toUpperCase() + newCategory.slice(1);
-
+  
       // Retrieve categories from storage
-      const result = await chrome.storage.local.get("categories");
+      const result = chrome.storage.local.get("categories");
       const categories = result.categories || [];
-
+  
       // Check if the category already exists in the stored categories
       if (
         !categories.some(
@@ -59,20 +64,48 @@ document.addEventListener("DOMContentLoaded", function () {
       ) {
         // Add the new category to storage
         categories.push(formattedCategory);
-        await chrome.storage.local.set({ categories });
-
+        chrome.storage.local.set({ categories });
+  
         // Update the dropdown with the new category
         updateCategoriesDropdown([formattedCategory]); // Pass only the new category
       } else {
-        console.log("Category already exists!");
+        alert("This category already exists.");
       }
-
-      // Clear the input field
+  
+      // Clear the input field and hide it
       newCategoryInput.value = "";
+      newCategoryInput.style.display = "none";
+      selectElement.value = ""; // Reset the dropdown selection
     } catch (error) {
       console.error("Error updating categories:", error);
     }
   });
+  
+  // Function to update categories dropdown
+  function updateCategoriesDropdown(newCategories) {
+    newCategories.forEach((category) => {
+      // Create a new option element
+      const option = new Option(category, category);
+  
+      // Insert the new option before the "Add New" option
+      const addNewOptionIndex = selectElement.options.length - 1;
+      selectElement.add(option, selectElement.options[addNewOptionIndex]);
+    });
+  }
+  
+  // On DOMContentLoaded, populate the dropdown with existing categories
+  document.addEventListener("DOMContentLoaded", function () {
+    try {
+      const result = chrome.storage.local.get("categories");
+      const categories = result.categories || [];
+  
+      // Populate the dropdown
+      updateCategoriesDropdown(categories);
+    } catch (error) {
+      console.error("Error loading categories:", error);
+    }
+  });
+  
 
   //main page eventListeners and function definitions
 
@@ -89,9 +122,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   //the current tab is saved when we click the current tab button
-  saveCurrentTab.addEventListener("click", async function () {
+  saveCurrentTab.addEventListener("click", function () {
     try {
-      const tabs = await browser.tabs.query({
+      const tabs = browser.tabs.query({
         active: true,
         currentWindow: true,
       });
