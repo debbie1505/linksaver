@@ -25,12 +25,26 @@ git clone https://github.com/yourusername/linksaver.git
 1. **Save a Link Manually:**
 - Click on the LinkSave extension icon.
 - Fill in the URL, title, and category in the provided form, then save it
-2. ** Svae the Current Tab:**
+2. **Save the Current Tab:**
 - Click the Save Current Tab button t store the link of the currenly open tab.
 3. **Organize Links:**
 - Use categories to organize your saved links for easy navigation
 4. **Access Saved Links:**
 - Click on **See Saved Links** button to view all store links.
+
+## Tech Stack
+- HTML, CSS, JavaScript: For the frontend-end interface
+- Chrome Storage API: For Saving data locally
+
+## Project Structure 
+```
+LinkSaver/
+├── index.html         # Main HTML file for the extension
+├── index.js           # Core JavaScript logic
+├── styles.css         # Styling for the extension
+├── manifest.json      # Chrome extension configuration
+├── Designer.png       # Extension icon
+```
 
 ### Chrome Extension
 "default_pop" key in the "action" key declares the HTML page to show in a popup when the extension's action icon is clicked
