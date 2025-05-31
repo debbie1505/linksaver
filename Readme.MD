@@ -11,7 +11,26 @@ LinkSaver is a lighweight and intutitive chrome extension designed to help users
 - **View Saved Links:** Access all your stored links in one convenient location.
 - **Local Storage:** Stores all data locally to ensure user privacy
 
+## How to Install
+1. Clone this repository to your local machine
+```
+git clone https://github.com/yourusername/linksaver.git
+```
+2. Open Chrome and navigate ``Chrome://extensions/``
+3. Enable Developer mode(toggle in the top-right corner)
+4. Click Load **load unpacked** and select the directory where you cloned the repository
 
+## How to use
+
+1. **Save a Link Manually:**
+- Click on the LinkSave extension icon.
+- Fill in the URL, title, and category in the provided form, then save it
+2. ** Svae the Current Tab:**
+- Click the Save Current Tab button t store the link of the currenly open tab.
+3. **Organize Links:**
+- Use categories to organize your saved links for easy navigation
+4. **Access Saved Links:**
+- Click on **See Saved Links** button to view all store links.
 
 ### Chrome Extension
 "default_pop" key in the "action" key declares the HTML page to show in a popup when the extension's action icon is clicked
