@@ -47,17 +47,17 @@ LinkSaver/
 ```
 
 ## Future enhancements
-1. Backend Integration:
+1. **Backend Integration**:
 - Transition from local storage to a cloud-based backend to enable cross device synchronization of saved links
 - Use technologies like Node.js and Express.js for the backend and a database like MongoDB for storing links securely
-2. Improved User Interface
+2. **Improved User Interface:**
 - Enhance the UI/UX with modern designed principles
 - Add animations and improve accesibility features 
-3. Search and Filter 
+3. **Search and Filter:**
 - Enable users to search and filter links by title, category, or date added
-4. Export/Import Functionality
+4. **Export/Import Functionality:**
 - Allow users to export their saved links as a JSON file and import them into another browser or account 
-5. Authetication System:
+5. **Authetication System:**
 - Add user authetication to manage personal accounts securely
 
 # Contributing 
