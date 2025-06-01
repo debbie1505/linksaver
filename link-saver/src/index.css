@@ -5,5 +5,11 @@
 
 /* Optional: Custom global styles */
 body {
-  @apply bg-[#6943FF] text-white font-sans;
+  @apply bg-[#6943FF] text-white font-grotesk;
+}
+
+@layer base {
+  input {
+    @apply text-black;
+  }
 }

@@ -4,7 +4,13 @@
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        inter: ['Inter', 'sans-serif'],
+        karla: ['Karla', 'sans-serif'],
+        grotesk: ['Space Grotesk', 'sans-serif']
+      },
+    },
   },
   plugins: [],
 }

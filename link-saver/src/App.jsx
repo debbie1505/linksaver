@@ -34,11 +34,11 @@ function App() {
     <main className="main">
       <Header />
       <p className=" text-[#FFFFFF] text-3xl font-thin mb-8">Your links, saved for later</p>
-      <button onClick={() => setShowModal(true)} className="bg-white text-[#6943FF] font-semibold px-5 py-3 rounded shadow hover:bg-[#6943FF] hover:text-white transition">
+      <button onClick={() => setShowModal(true)} className="bg-white text-[#6943FF] font-semibold px-5 py-3 rounded shadow hover:bg-[#6943FF] hover:text-white transition min-w-[250px] min-h-[56px]">
         🔗 Save Link
       </button>
       <button
-        className="bg-white text-[#6943FF] font-semibold px-5 py-3 rounded shadow hover:bg-[#6943FF] hover:text-white transition mt-4"
+        className="bg-white text-[#6943FF] font-semibold px-5 py-3 rounded shadow hover:bg-[#6943FF] hover:text-white transition mt-4 mb-4 min-w-[250px] min-h-[56px]"
         onClick={handleSaveCurrentTab}>
         🗂️ Save Current Tab
       </button>

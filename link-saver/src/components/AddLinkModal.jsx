@@ -14,14 +14,16 @@ function AddLinkModal({ onClose, onSave }) {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
       <div className="bg-white text-[#6943FF] w-[90%] max-w-md p-6 rounded shadow-lg relative">
-        <button
+        <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+          <header className="flex items-center justify-between bg-[#6943FF] pl-4 h-12 rounded-t">
+          <h2 className="text-white text-xl font-semibold">Customize Link</h2>
+          <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-2xl hover:text-red-600"
+          className="h-full px-4 text-white text-xl hover:bg-red-600 transition-colors border-none focus:outline-none"
         >
           &times;
         </button>
-        <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
-          <h2 className="text-xl font-bold text-center mb-2">Customize Link</h2>
+        </header>
           <div>
             <label htmlFor="title" className="block font-semibold">
               URL Title
@@ -60,12 +62,19 @@ function AddLinkModal({ onClose, onSave }) {
               placeholder="e.g. Portfolio"
             />
           </div>
+          <div className="flex justify-center mt-6 gap-4">
           <button
             type="submit"
-            className="bg-[#6943FF] text-white py-2 rounded hover:bg-[#5a38d6] transition"
+            className="bg-[#6943FF] text-white py-2 rounded hover:bg-[#5a38d6] transition w-40 h-12"
           >
             Save Link
           </button>
+          <button
+            className="bg-[#6943FF] text-white py-2 rounded hover:bg-[#5a38d6] transition w-60 h-12"
+          >
+            Save Link & Add Another
+          </button>
+          </div>
         </form>
       </div>
     </div>
