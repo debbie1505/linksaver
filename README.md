@@ -32,6 +32,10 @@ git clone https://github.com/yourusername/linksaver.git
 4. **Access Saved Links:**
 - Click on **See Saved Links** button to view all store links.
 
+Looks like the when added as a chrome extension
+![image](https://github.com/user-attachments/assets/b0acb471-2b92-46de-a55c-5ff5c6bd9ec8)
+
+
 ## Tech Stack
 - HTML, CSS, JavaScript: For the frontend-end interface
 - Chrome Storage API: For Saving data locally
