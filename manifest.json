@@ -1,0 +1,10 @@
+{
+  "name": "Tab Saver",
+  "description": "A Browser Extension that allows you to store your links locally in a save place for future references.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": ""
+  }
+}
