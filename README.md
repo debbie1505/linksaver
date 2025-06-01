@@ -43,12 +43,31 @@ Looks like the when added as a chrome extension
 
 ## Project Structure 
 ```
-LinkSaver/
-├── index.html         # Main HTML file for the extension
-├── index.js           # Core JavaScript logic
-├── styles.css         # Styling for the extension
-├── manifest.json      # Chrome extension configuration
-├── Designer.png       # Extension icon
+linksaver/                ← Root of the Git repo
+├── public/               ← Static files served directly
+│   ├── assets/           ← Icons, images
+│   │   └── Designer.png
+│   ├── index.html        ← React entry point
+│   └── manifest.json     ← Chrome extension config
+│
+├── src/                  ← Source code for the React app
+│   ├── components/       ← Reusable React components
+│   │   ├── Header.js
+│   │   ├── AddLinkModal.js
+│   │   ├── LinksList.js
+│   │   └── ...           
+│   ├── App.js            ← Main component
+│   ├── index.js          ← React entry file
+│   ├── index.css         ← Tailwind directives + global styles
+│   └── utils/            ← Utility functions (e.g., storage helpers)
+│
+├── .gitignore
+├── package.json
+├── postcss.config.js     ← Required for Tailwind
+├── tailwind.config.js    ← Tailwind config
+├── README.md             ← Project documentation
+└── vite.config.js (if using Vite) or other bundler configs
+
 ```
 
 ## Future enhancements
