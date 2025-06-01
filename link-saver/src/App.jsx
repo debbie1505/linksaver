@@ -33,12 +33,12 @@ function App() {
   return (
     <main className="main">
       <Header />
-      <p className="bg-white text-[#6943FF] px-4 py-2 rounded shadow font-semibold hover:underline">Your links, saved for later</p>
-      <button onClick={() => setShowModal(true)} className="links-btn">
+      <p className=" text-[#FFFFFF] text-3xl font-thin mb-8">Your links, saved for later</p>
+      <button onClick={() => setShowModal(true)} className="bg-white text-[#6943FF] font-semibold px-5 py-3 rounded shadow hover:bg-[#6943FF] hover:text-white transition">
         🔗 Save Link
       </button>
       <button
-        className="links-btn"
+        className="bg-white text-[#6943FF] font-semibold px-5 py-3 rounded shadow hover:bg-[#6943FF] hover:text-white transition mt-4"
         onClick={handleSaveCurrentTab}>
         🗂️ Save Current Tab
       </button>
