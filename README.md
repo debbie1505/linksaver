@@ -1,6 +1,9 @@
 
 # LinkSaver Chrome Extension
 
+![image](https://github.com/user-attachments/assets/530579c7-9a12-4e8b-b372-fb700e5426b1)
+
+
 ## Overview
 
 LinkSaver is a lighweight and intutitive chrome extension designed to help users save and organize important links for easy access later. Whether it's a research article, a tutorial, or a favorite, LinkSaver ensure your valuable links are always at your fingertips
